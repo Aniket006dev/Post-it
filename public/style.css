@@ -24,8 +24,8 @@ h1 {
     text-shadow: 2px 2px rgb(4, 4, 4);
     
 }
-h3,h4{
-padding: 1rem;
+h2,h3,h4{
+padding: 1.1rem ;
 }
 
 .newPost {
