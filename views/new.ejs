@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit new post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Create a Quora post</h1>
+    <div class="post postCont">
+        <form action="/posts" method="post" enctype="multipart/form-data">
+            <hr>
+            <input type="text" name="name" placeholder="enter the username">
+            <br><br>
+            <textarea name="content" placeholder="write a post..." class="textarea"></textarea>
+            <br>
+            <label for="color"><b>Choose Text-Color for post</b> </label>
+            <input type="color" name="color" id="color">
+            <br>
+            <br>
+            <p>Upload Media</p>
+            <input type="file" name="media" accept="image/*">
+            <hr>
+            <br>
+            <button>submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

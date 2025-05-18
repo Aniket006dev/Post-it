@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2><%= post.name %>'s post in detail</h2>
+    <h4>Id : <%= post.id %></h4>
+    <hr>
+    <div class="postCont">
+        <div class="post">
+                <p><i><b>@<%= post.name %></b></i></p>
+                <p><%= post.content %></p>
+                <% if (post.media) { %>
+                        <img src="<%= post.media %>" alt="Post Image" class="postimg">
+                <% } %>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>
