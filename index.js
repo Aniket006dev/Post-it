@@ -1,13 +1,13 @@
-const PORT = process.env.PORT || 3000;
-
 
 const exp=require("express");
+let app=exp();
 const path=require("path");
 const {v4: uuidv4}=require("uuid");
 const override=require("method-override");
 
 // *************************************************
 const multer = require("multer");
+const PORT = process.env.PORT || 3000;
 
 // Set destination and filename
 const storage = multer.diskStorage({
@@ -24,7 +24,6 @@ const upload = multer({ storage: storage });
 
 // **************************************************
 
-let app=exp();
 app.use(exp.urlencoded({extended:true}))
 app.use(override("_method"));
 app.set("view engine","ejs");
