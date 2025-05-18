@@ -20,15 +20,15 @@
                         <img src="<%=post.media %>" alt="Post Image" class="postimg">
                         <% } %>
                 </div>
-                <a href="http://localhost:5000/posts/<%= post.id %>">Show More </a> &nbsp;&nbsp;&nbsp;
-                <a href="http://localhost:5000/posts/<%= post.id %>/edit">Edit Post</a>&nbsp;&nbsp;&nbsp;
+                <a href="/posts/<%= post.id %>">Show More </a> &nbsp;&nbsp;&nbsp;
+                <a href="/posts/<%= post.id %>/edit">Edit Post</a>&nbsp;&nbsp;&nbsp;
                 <form action="/posts/<%= post.id %>?_method=DELETE" style="display: inline;" method="post">
                     <button>Delete Post</button>
                 </form>
             </div>
             <%}%>
 
-                <a class="newPost" href="http://localhost:5000/posts/new">Create a new post</a>
+                <a class="newPost" href="/posts/new">Create a new post</a>
     </div>
 </body>
 
