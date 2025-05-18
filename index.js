@@ -87,7 +87,7 @@ app.patch("/posts/:id",upload.single('media'),(req,res)=>{
     let {id}=req.params;
     let content=req.body.content;
     let color=req.body.color;
-    let media = req.file ? `/uploads/${req.file.filename}` : "";
+    let media = req.file ? `/uploads/${req.file.filename}` : null;
     let post=posts.find((p)=>id ==p.id);
     post.content=content;
     post.media=media;
@@ -97,7 +97,7 @@ app.patch("/posts/:id",upload.single('media'),(req,res)=>{
 })
 app.get("/posts/:id/edit",(req,res)=>{
     let {id} = req.params;
-    let post =posts.find((p)=> id===p.id);
+    let post =posts.find((p)=> id==p.id);
     res.render("patch.ejs",{post});
 })
 
