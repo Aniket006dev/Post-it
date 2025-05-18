@@ -1,7 +1,4 @@
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 
 const exp=require("express");
@@ -79,7 +76,7 @@ app.get("/posts/:id",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p)=>id ==p.id);
     res.render("show.ejs",{post})
-
+    
 })
 
 app.patch("/posts/:id",upload.single('media'),(req,res)=>{
@@ -92,7 +89,7 @@ app.patch("/posts/:id",upload.single('media'),(req,res)=>{
     post.media=media;
     post.color=color;
     res.redirect("/posts");
-
+    
 })
 app.get("/posts/:id/edit",(req,res)=>{
     let {id} = req.params;
@@ -105,6 +102,7 @@ app.delete("/posts/:id",(req,res)=>{
     posts =posts.filter((p)=> id !== p.id);
     res.redirect("/posts")
 })
-app.listen(5000,()=>{
-    console.log("the port is working");
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
