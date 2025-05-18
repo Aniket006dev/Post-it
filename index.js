@@ -87,10 +87,12 @@ app.patch("/posts/:id",upload.single('media'),(req,res)=>{
     let {id}=req.params;
     let content=req.body.content;
     let color=req.body.color;
-    let media = req.file ? `/uploads/${req.file.filename}` : null;
     let post=posts.find((p)=>id ==p.id);
+    if(req.file!=null){
+       let media = req.file ? `/uploads/${req.file.filename}` : null;
+        post.media=media;
+    }
     post.content=content;
-    post.media=media;
     post.color=color;
     res.redirect("/posts");
     
